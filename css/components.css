@@ -1,0 +1,413 @@
+/* 模块选择器样式 */
+.module-selector {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.module-selector h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.module-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #3498db;
+}
+
+.module-card.selected {
+    border-color: #27ae60;
+    background: linear-gradient(135deg, #d5f4e6 0%, #ffeaa7 100%);
+}
+
+.module-card.selected::before {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: #27ae60;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.module-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.module-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.module-card p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.question-count {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.module-description {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.selection-summary {
+    background: #ecf0f1;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.start-test-btn {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    margin-top: 1rem;
+}
+
+/* 答题界面样式 */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quiz-progress {
+    background: #ecf0f1;
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    background: linear-gradient(90deg, #3498db, #27ae60);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.question-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.question-type {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.question-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    line-height: 1.4;
+}
+
+.options-container {
+    margin: 1.5rem 0;
+}
+
+.option {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.8rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.option:hover {
+    border-color: #3498db;
+    background: #e3f2fd;
+}
+
+.option.selected {
+    border-color: #27ae60;
+    background: #d5f4e6;
+}
+
+.option input[type="radio"] {
+    margin-right: 0.8rem;
+}
+
+.option-text {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* 李克特量表样式 */
+.likert-scale {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.likert-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.likert-option:hover {
+    background: #e3f2fd;
+}
+
+.likert-option.selected {
+    background: #d5f4e6;
+}
+
+.likert-option input[type="radio"] {
+    margin-bottom: 0.5rem;
+    transform: scale(1.2);
+}
+
+.likert-label {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.likert-endpoints {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* 导航按钮 */
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.quiz-navigation .btn {
+    min-width: 120px;
+}
+
+/* 结果展示样式 */
+.results-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.results-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.results-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.political-position {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.score-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.score-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.score-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.score-bar {
+    width: 100%;
+    height: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.score-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.8s ease;
+}
+
+.score-left { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+.score-center { background: linear-gradient(90deg, #f39c12, #d68910); }
+.score-right { background: linear-gradient(90deg, #3498db, #2980b9); }
+
+.score-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.results-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 政治光谱可视化 */
+.spectrum-visualization {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.spectrum-bar {
+    height: 30px;
+    background: linear-gradient(90deg, #e74c3c 0%, #f39c12 25%, #2ecc71 50%, #3498db 75%, #9b59b6 100%);
+    border-radius: 15px;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.spectrum-pointer {
+    position: absolute;
+    top: -5px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 3px solid #2c3e50;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.spectrum-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .likert-scale {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .results-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .score-display {
+        grid-template-columns: 1fr;
+    }
+} 
